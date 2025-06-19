@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const urlSchema=new mongoose.Schema({
-    shotrUrl:{
+    shortUrl:{
         type: String,
         unique: true
     },
