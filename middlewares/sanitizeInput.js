@@ -9,4 +9,4 @@ const sanitizeInput=(req,res,next)=>{
         next(error);
     }
 };
-module.exports=sanitizeInput;
+module.exports={sanitizeInput};

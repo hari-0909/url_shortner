@@ -1,5 +1,5 @@
 const express=require('express');
-const { validate } = require('../models/url');
+const url = require('../models/url');
 const urlRepo=require('../repository/urlRepository');
 const {nanoid}=require('nanoid');
 const {saveUrl,getUrlByShortId,incrementCount}=require('../repository/urlRepository');
@@ -20,6 +20,9 @@ async function shortenUrl(originalUrl){
         //add http:// if protocol is missing
         if(!originalUrl.startsWith('http://') && !originalUrl.startsWith('https://')){
             originalUrl=`http://${originalUrl}`;
+        }
+        if(!isValidUrl(originalUrl)){
+            throw new Error('Invalid URL format');
         }
         const shortId=nanoid(6);//generate a 6-character unique ID
         const urlDoc=await saveUrl(shortId,originalUrl);

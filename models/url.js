@@ -11,7 +11,7 @@ const urlSchema=new mongoose.Schema({
     },
     clickCount:{
         type:Number,
-        dafault:0
+        default:0
     }
 })
 module.exports=mongoose.model('Url',urlSchema);

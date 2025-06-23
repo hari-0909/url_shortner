@@ -2,7 +2,7 @@ const express= require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 const connectdb = require('./configs/mongodbconnection');
-const sanitizeInput=require("./middlewares/sanitizeInput");
+const {sanitizeInput}=require("./middlewares/sanitizeInput");
 const limiter=require("./middlewares/rateLimiter");
 const urlRoutes = require('./routes/urlRoutes');
 const app = express();
