@@ -10,7 +10,7 @@ router.get('/:shortId',async (req,res,next)=>{
         res.redirect(originalUrl);
     }catch(error){
         if(error.message==='URL not found'){
-            return res.status(404).jason({
+            return res.status(404).json({
                 error:{
                     message:'Short URL not found'
                 }

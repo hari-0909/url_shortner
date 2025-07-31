@@ -6,6 +6,8 @@ const {sanitizeInput}=require("./middlewares/sanitizeInput");
 const limiter=require("./middlewares/rateLimiter");
 const urlRoutes = require('./routes/urlRoutes');
 const app = express();
+const cors = require("cors")
+app.use(cors({ origin: "http://localhost:3000" }))
 const port = process.env.PORT || 8081;
 //connect to mongodb
 connectdb();

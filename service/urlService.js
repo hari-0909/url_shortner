@@ -52,7 +52,7 @@ async function shortenUrlHandler(req,res,next){
         }
         const urlDoc=await shortenUrl(url);
         res.json({
-            shortUrl:`https://${req.get('host')}/api/${urlDoc.shortUrl}`
+            shortUrl:`http://${req.get('host')}/api/${urlDoc.shortUrl}`
         });
     }catch(err){
         if(err.message.includes('Invalid URL')){
