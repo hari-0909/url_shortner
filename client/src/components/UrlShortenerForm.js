@@ -8,14 +8,12 @@ export default function UrlShortenerForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!inputUrl.trim()) return setError("Please enter a URL")
+    if (!inputUrl.trim()) return
     try {
-      setError("")
       const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/shorten`, { url: inputUrl })
       setShortUrl(res.data.shortUrl)
     } catch (err) {
       setShortUrl("")
-      setError(err.response?.data?.error || "Something went wrong")
     }
   }
 
@@ -31,7 +29,7 @@ export default function UrlShortenerForm() {
         />
         <button type="submit">Shorten</button>
       </form>
-      
+
       {shortUrl && (
         <div style={{ marginTop: "20px", textAlign: "center" }}>
           <p>
