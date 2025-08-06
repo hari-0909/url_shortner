@@ -10,7 +10,7 @@ const cors = require("cors")
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://shortly-hari.netlify.app"
+    "https://creative-palmier-a072b7.netlify.app"
   ],
   credentials: true
 }));
