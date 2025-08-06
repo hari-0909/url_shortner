@@ -7,7 +7,13 @@ const limiter=require("./middlewares/rateLimiter");
 const urlRoutes = require('./routes/urlRoutes');
 const app = express();
 const cors = require("cors")
-app.use(cors({ origin: "http://localhost:3000" }))
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://shortly-hari.netlify.app"
+  ],
+  credentials: true
+}));
 const port = process.env.PORT || 8081;
 //connect to mongodb
 connectdb();
