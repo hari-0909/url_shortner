@@ -5,7 +5,6 @@ import { QRCodeCanvas } from "qrcode.react"
 export default function UrlShortenerForm() {
   const [inputUrl, setInputUrl] = useState("")
   const [shortUrl, setShortUrl] = useState("")
-  const [error, setError] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault()
