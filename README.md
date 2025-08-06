@@ -59,11 +59,3 @@ A modern, secure, and responsive Bitly-like URL shortener built using the **MERN
 ---
 
 
----
-
-## 🌐 Live Demo
-
-👉 [Launch the App](https://shortly.netlify.app)
-
----
-
