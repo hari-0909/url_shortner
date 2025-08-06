@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { QRCodeCanvas } from "qrcode.react"
 
 export default function UrlShortenerForm() {
   const [inputUrl, setInputUrl] = useState("")
@@ -31,11 +32,16 @@ export default function UrlShortenerForm() {
         />
         <button type="submit">Shorten</button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      
       {shortUrl && (
-        <p style={{ marginTop: "10px" }}>
-          Short URL: <a href={shortUrl} target="_blank" rel="noreferrer">{shortUrl}</a>
-        </p>
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <p>
+            Short URL: <a href={shortUrl} target="_blank" rel="noreferrer">{shortUrl}</a>
+          </p>
+          <div style={{ marginTop: "16px" }}>
+            <QRCodeCanvas value={shortUrl} size={128} />
+          </div>
+        </div>
       )}
     </div>
   )

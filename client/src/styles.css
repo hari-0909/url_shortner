@@ -1,4 +1,4 @@
-/* Global Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -31,37 +31,40 @@ body {
 .logo {
   font-size: 24px;
   font-weight: 600;
-  color: #000000;
+  color: #000;
 }
 
 .auth-buttons {
   display: flex;
   gap: 12px;
+  align-items: center;
+}
+
+.auth-buttons p {
+  margin-right: 10px;
+  font-weight: 500;
+  color: #222;
 }
 
 .auth-buttons button {
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: 1px solid #0b5ed7;
-  background-color: transparent;
-  color: #0b5ed7;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
   font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.auth-buttons .signup {
-  background-color: #0b5ed7;
-  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .auth-buttons button:hover {
-  background-color: #084298;
-  color: #ffffff;
-  border-color: #084298;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 132, 255, 0.5);
 }
 
-/* Main Area */
+/* Main */
 main {
   display: flex;
   justify-content: center;
@@ -70,9 +73,9 @@ main {
   padding: 0 20px;
 }
 
-/* Form Card */
+/* URL Form */
 .container {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
@@ -87,7 +90,6 @@ main {
   color: #0b5ed7;
 }
 
-/* Input + Button */
 input {
   width: 65%;
   padding: 12px;
@@ -97,22 +99,26 @@ input {
   outline: none;
 }
 
+/* Submit button (used in URL shortener form) */
 button[type="submit"] {
   padding: 12px 20px;
   margin-left: 12px;
-  background-color: #0b5ed7;
+  background: linear-gradient(135deg, #00b4db, #0083b0);
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #084298;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 132, 255, 0.5);
 }
 
+/* Paragraph */
 p {
   margin-top: 15px;
   font-size: 15px;
@@ -130,4 +136,132 @@ p {
   font-size: 14px;
   color: #999;
   background: transparent;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-content p {
+  margin-top: 18px;
+}
+
+.modal-content p button,
+.modal-content button[type="submit"] {
+  margin-left: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 132, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.modal-content p button:hover,
+.modal-content button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 132, 255, 0.4);
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px);
+  text-align: center;
+  background: linear-gradient(135deg, #c3cfe2, #dde9f9);
+  padding: 80px 20px 40px; /* TOP padding fixed */
+  margin: 40px auto;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.landing h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #0b5ed7;
+}
+
+.landing p {
+  font-size: 18px;
+  color: #444;
+  max-width: 500px;
+}
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.google-signin-btn:hover {
+  background-color: #3367d6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
 }

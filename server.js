@@ -21,6 +21,8 @@ app.use('/api',urlRoutes);
 app.get("/", (req, res) => {
   res.send("home url for our url shortener");
 });
+const authRoutes = require('./routes/authRoutes');
+app.use('/api/auth', authRoutes);
 //404 handler
 app.use((req,res,next)=>{
   res.status(404).json({
