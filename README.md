@@ -58,4 +58,9 @@ A modern, secure, and responsive Bitly-like URL shortener built using the **MERN
 
 ---
 
+---
+## 🚀 Live Demo
 
+Check out the deployed app here:  
+👉 [Shortly - URL Shortener](https://creative-palmier-a072b7.netlify.app/)
+----
